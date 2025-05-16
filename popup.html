@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Multi-Line Finder</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      width: 360px;
+      padding: 15px;
+      background-color: #f8f9fc;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      box-sizing: border-box;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 18px;
+      color: #333;
+    }
+
+    textarea {
+      width: 100%;
+      height: 100px;
+      padding: 10px;
+      resize: none;
+      font-size: 14px;
+      background-color: #eef6fb;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      box-sizing: border-box;
+    }
+
+    .button-group {
+      display: flex;
+      gap: 10px;
+    }
+
+    button {
+      flex: 1;
+      padding: 8px;
+      font-size: 14px;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      color: white;
+      transition: background-color 0.2s ease;
+    }
+
+    button#findText {
+      background-color: #a65ff2;
+    }
+
+    button#findText:hover {
+      background-color: #8e4dd1;
+    }
+
+    button#resetHighlights {
+      background-color: #e5566e;
+    }
+
+    button#resetHighlights:hover {
+      background-color: #c9455c;
+    }
+
+    #message {
+      font-size: 13px;
+      color: #333;
+      font-weight: bold;
+      padding: 6px;
+      border-left: 4px solid #4caf50;
+      background-color: #ecfdf0;
+      border-radius: 5px;
+      white-space: pre-line;
+    }
+
+    #message span {
+      display: block;
+      margin-bottom: 6px;
+    }
+	body {
+  position: relative; /* needed for absolute positioning inside */
+}
+
+#topRightLogo {
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  height: 50px;         /* adjust size as needed */
+  border-radius: 50%;   /* optional rounded corners */
+  opacity: 1.7;         /* optional slight transparency */
+  pointer-events: none; /* so it doesn't block clicks */
+  z-index: 1000;        /* above other elements */
+}
+
+  </style>
+</head>
+<body>
+<img id="topRightLogo" src="Manivannan.jpg" alt="Logo">
+  <textarea id="textInput" placeholder="Enter phrases, one per line..."></textarea>
+  <div class="button-group">
+    <button id="findText">Find Text</button>
+    <button id="resetHighlights">Reset</button>
+  </div>
+  <div id="message"></div>
+  <script src="popup.js"></script>
+</body>
+</html>

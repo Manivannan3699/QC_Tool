@@ -1,0 +1,28 @@
+{
+    "manifest_version": 3,
+    "name": "Multi-Line Finder",
+    "version": "1.2",
+    "description": "Find and highlight multiple lines of text.",
+    "permissions": ["activeTab"],
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": "icon.png"
+    },
+    "background": {
+        "service_worker": "background.js" // Add this line
+    },
+    "commands": {
+        "open_multi_line_finder": {
+            "suggested_key": {
+                "default": "Ctrl+Shift+F" // Set your preferred shortcut
+            },
+            "description": "Open Multi-Line Finder popup"
+        }
+    },
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["content.js"]
+        }
+    ]
+}
